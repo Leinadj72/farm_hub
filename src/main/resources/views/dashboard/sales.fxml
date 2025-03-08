@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox fx:controller="farmhub.controllers.SalesController"
+          xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+      spacing="20">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Sales Management" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+    <TableView fx:id="salesTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Date" fx:id="colDate" />
+            <TableColumn text="Produce" fx:id="colProduce" />
+            <TableColumn text="Quantity" fx:id="colQuantity" />
+            <TableColumn text="Total" fx:id="colAmount" />
+        </columns>
+    </TableView>
+
+    <ComboBox fx:id="produceComboBox"/>
+    <TextField fx:id="quantityField" promptText="Quantity"/>
+    <Label fx:id="totalAmountLabel" text="₵0.00"/>
+    <Button text="Record Sale" fx:id="recordSaleButton" onAction="#handleRecordSale"/>
+
+</VBox>
+

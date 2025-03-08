@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="sidebar" prefHeight="450.0" prefWidth="260.0" spacing="15.0" 
+      style="-fx-background-color:rgb(223, 231, 104); -fx-padding: 20px; -fx-spacing: 25px;" 
+      xmlns="http://javafx.com/javafx/23.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="farmhub.controllers.SidebarController">
+
+    <!-- App Title -->
+    <Label prefHeight="50.0" prefWidth="220.0" 
+           style="-fx-font-size: 28px; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 0px; -fx-alignment: center-left;" 
+           text="FarmHub">
+      <font>
+         <Font size="30.0" />
+      </font>
+    </Label>
+
+    <!-- Navigation Links -->
+    <VBox fx:id="navItems" spacing="15.0" alignment="CENTER_LEFT">
+        <Label fx:id="dashboardLabel" onMouseClicked="#handleDashboardClick" 
+               prefHeight="40.0" prefWidth="230.0" text="📊 Dashboard" 
+               style="-fx-text-fill: white; -fx-font-size: 18px; -fx-padding: 8px 15px; -fx-background-radius: 8px; -fx-cursor: hand;">
+        </Label>
+
+        <Label fx:id="inventoryLabel" onMouseClicked="#handleInventoryClick" 
+               prefHeight="40.0" prefWidth="230.0" text="📦 Inventory" 
+               style="-fx-text-fill: white; -fx-font-size: 18px; -fx-padding: 8px 15px; -fx-background-radius: 8px; -fx-cursor: hand;">
+        </Label>
+
+        <Label fx:id="produceLabel" onMouseClicked="#handleProduceClick" 
+               prefHeight="40.0" prefWidth="230.0" text="🌱 Produce" 
+               style="-fx-text-fill: white; -fx-font-size: 18px; -fx-padding: 8px 15px; -fx-background-radius: 8px; -fx-cursor: hand;">
+        </Label>
+
+        <Label fx:id="salesLabel" onMouseClicked="#handleSalesClick" 
+               prefHeight="40.0" prefWidth="230.0" text="💰 Sales" 
+               style="-fx-text-fill: white; -fx-font-size: 18px; -fx-padding: 8px 15px; -fx-background-radius: 8px; -fx-cursor: hand;">
+        </Label>
+
+        <Label fx:id="weatherLabel" onMouseClicked="#handleWeatherClick" 
+               prefHeight="40.0" prefWidth="230.0" text="🌦️ Weather" 
+               style="-fx-text-fill: white; -fx-font-size: 18px; -fx-padding: 8px 15px; -fx-background-radius: 8px; -fx-cursor: hand;">
+        </Label>
+    </VBox>
+
+</VBox>

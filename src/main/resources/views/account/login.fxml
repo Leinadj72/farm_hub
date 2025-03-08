@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane style="-fx-background-color: rgba(0, 0, 0, 0.7);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="farmhub.controllers.LoginController">
+
+    <!-- Background Image -->
+    <ImageView fx:id="imageView" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+        <image>
+            <Image url="@../../images/login.jpg" />
+        </image>
+    </ImageView>
+
+    <!-- Dark Overlay for Contrast -->
+    <AnchorPane style="-fx-background-color: rgba(0, 0, 0, 0);" 
+                 AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" 
+                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+
+    <!-- Centered Login Form with Fade-In Effect -->
+    <VBox alignment="CENTER" spacing="15.0" fx:id="loginForm">
+        <AnchorPane prefHeight="400.0" prefWidth="350.0" 
+                    style="-fx-background-color: rgba(255, 255, 255, 0.5); -fx-background-radius: 10; 
+                           -fx-max-width: 450; -fx-padding: 20; 
+                           -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10,0,0,5);">
+
+            <!-- Title -->
+            <Text layoutX="120.0" layoutY="51.0" text="Welcome Back" textAlignment="CENTER">
+                <font>
+                    <Font size="22.0" />
+                </font>
+            </Text>
+
+            <!-- Email Field -->
+            <Label layoutX="89.0" layoutY="98.0" text="Email">
+                <font>
+                    <Font name="Noto Sans Regular" size="16.0" />
+                </font>
+            </Label>
+            <TextField fx:id="emailField" layoutX="89.0" layoutY="126.0" prefHeight="35.0" prefWidth="300.0" style="-fx-background-radius: 8;" />
+            <Label fx:id="emailErrorLabel" layoutX="25.0" layoutY="165.0" textFill="RED" />
+
+            <!-- Password Field with Toggle Visibility -->
+            <Label layoutX="89.0" layoutY="178.0" text="Password">
+                <font>
+                    <Font name="Noto Sans Regular" size="16.0" />
+                </font>
+            </Label>
+            <AnchorPane layoutX="89.0" layoutY="206.0" prefWidth="300.0" prefHeight="35.0">
+                <PasswordField fx:id="passwordField" prefHeight="35.0" prefWidth="270.0" style="-fx-background-radius: 8;" />
+            </AnchorPane>
+            <Label fx:id="passwordErrorLabel" layoutX="25.0" layoutY="245.0" textFill="RED" />
+
+            <!-- Login Button with Hover Effect -->
+            <Button layoutX="89.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleLoginButton" 
+                    prefHeight="40.0" prefWidth="300.0" 
+                    style="-fx-background-color: #28a745; -fx-background-radius: 10; -fx-transition: 0.3s;" 
+                    text="Login" textFill="WHITE">
+                <font>
+                    <Font size="16.0" />
+                </font>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </Button>
+
+            <!-- Register Link -->
+            <Label layoutX="93.0" layoutY="330.0" text="New to FarmHub?">
+                <font>
+                    <Font name="Noto Sans Regular" size="14.0" />
+                </font>
+            </Label>
+            <Hyperlink layoutX="277.0" layoutY="327.0" onAction="#handleRegisterRedirect" text="Create Account">
+                <font>
+                    <Font name="Noto Sans Bold" size="14.0" />
+                </font>
+            </Hyperlink>
+        </AnchorPane>
+    </VBox>
+</StackPane>
+

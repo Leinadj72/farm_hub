@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:controller="farmhub.controllers.DashboardController"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="20">
+
+    <!-- Correct padding definition -->
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="Dashboard Overview" style="-fx-font-size: 24px; -fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+    <!-- High-Level Cards (Totals) -->
+    <HBox spacing="20" alignment="CENTER">
+        <VBox>
+            <Label text="Total Sales" />
+            <Label fx:id="totalSalesLabel" text="₵0.00" />
+        </VBox>
+        <VBox>
+            <Label text="Total Produce" />
+            <Label fx:id="totalProduceLabel" text="0" />
+        </VBox>
+        <VBox>
+            <Label text="Low Stock" />
+            <Label fx:id="lowStockLabel" text="0" />
+        </VBox>
+    </HBox>
+
+    <!-- Sales Table -->
+    <TableView fx:id="salesTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Date" fx:id="colDate" />
+            <TableColumn text="Produce" fx:id="colProduce" />
+            <TableColumn text="Quantity" fx:id="colQuantity" />
+            <TableColumn text="Total Amount" fx:id="colAmount" />
+        </columns>
+    </TableView>
+
+    <!-- Sales Chart -->
+    <BarChart fx:id="salesChart" VBox.vgrow="ALWAYS">
+        <xAxis>
+            <CategoryAxis fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis fx:id="yAxis" />
+        </yAxis>
+    </BarChart>
+
+</VBox>

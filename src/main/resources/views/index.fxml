@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="farmhub.controllers.IndexController">
+
+    <!-- Background Image -->
+    <ImageView fx:id="imageView" fitHeight="800" fitWidth="1240.0" pickOnBounds="true" smooth="false">
+        <image>
+            <Image url="@../images/hero.jpg" />
+        </image>
+    </ImageView>
+
+    <!-- Dark Overlay for Better Contrast -->
+    <AnchorPane style="-fx-background-color: rgba(0, 0, 0, 0.6);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+
+    <!-- Main Content -->
+    <VBox alignment="CENTER" spacing="15.0" style="-fx-padding: 50;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <!-- Company Name -->
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="FarmHub" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="50.0" />
+                </font>
+            </Text>
+
+            <!-- Catchy Subtitle -->
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Connecting Farmers to the Future" textAlignment="CENTER">
+                <font>
+                    <Font name="Fira Code Light" size="22.0" />
+                </font>
+            </Text>
+
+            <!-- Call to Action Button -->
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#handlerRegisterClick" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #28a745; -fx-background-radius: 10;" text="Get Started" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+            </Button>
+        </children>
+    </VBox>
+</AnchorPane>
